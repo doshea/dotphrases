@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
-  
+
   get '/faq' => 'pages#faq'
 
-  get '/404', to: 'errors#not_found'
-  get '/422', to: 'errors#unacceptable'
-  get '/500', to: 'errors#internal_error'
+  match '/404', to: 'errors#not_found', via: :all
+  match '/422', to: 'errors#unacceptable', via: :all
+  match '/500', to: 'errors#internal_error', via: :all
 end
