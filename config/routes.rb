@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   get '/error' => 'pages#error'
+  get '/faq' => 'pages#faq'
 end

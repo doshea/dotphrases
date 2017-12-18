@@ -1,0 +1,55 @@
+%footer#footer.pt-5
+  .container
+    .row
+      .col-lg-6
+        %p.display-2.mb-2 Footer.
+    .row
+      .col-6.col-md-3
+        %h6.text-uppercase More
+        %ul.list-unstyled
+          %li
+            %a{href: "./"} Link
+          %li
+            =link_to "FAQ's", faq_path
+          %li
+            %a{href: "./"} Link
+      .col-6.col-md-3.column
+        %h6.text-uppercase More
+        %ul.list-unstyled
+          %li
+            %a{href: "./"} Link
+          %li
+            %a{href: "./"} Link
+          %li
+            %a{href: "./"} Link
+      .col-12.col-md-3.column
+      .col-12.col-lg-2.col-md-3.text-right
+        %h6.text-uppercase More
+        %p
+          %em
+            %a{href: ""} Link to another page.
+      .col-12.text-md-right.text-center
+        %br/
+        %ul.list-inline
+          %li.list-inline-item
+            %a{href: "", rel: "nofollow", title: "Twitter"}>
+              %i.ion-social-twitter-outline
+             
+          %li.list-inline-item
+            %a{href: "", rel: "nofollow", title: "Instagram"}>
+              %i.ion-social-instagram-outline
+             
+          %li.list-inline-item
+            %a{href: "", rel: "nofollow", title: "Facebook"}>
+              %i.ion-social-facebook-outline
+             
+          %li.list-inline-item
+            %a{href: "", rel: "nofollow", title: "Dribbble"}
+              %i.ion-social-dribbble-outline
+    %br/
+    %br/
+    %hr.light/
+    .text-center.text-normal
+      %a{:href => ""}
+        Company, Inc.
+        %i.ion-location

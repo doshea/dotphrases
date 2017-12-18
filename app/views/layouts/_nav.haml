@@ -1,0 +1,20 @@
+%nav#topNav.navbar.navbar-default.mb-3.navbar-expand-md.fixed-top{"data-toggle" => "affix"}
+  %button.navbar-toggler.collapsed.navbar-toggler-right.border-0{"data-target" => "#collapsingNavbar", "data-toggle" => "collapse", type: "button"}
+    %span
+    %span
+    %span
+  .d-flex
+    / this toggler only displays on offcanvas layout
+    %a.navbar-toggler-anim.toggler-offcanvas.my-auto.collapsed.border-0.mr-2{"data-target" => "#offcanvasNavbar", "data-toggle" => "collapse", href: "#"}
+      %span
+      %span
+      %span
+    / text brand or logo image goes here
+    %a.navbar-brand.page-scroll.text-uppercase.wide-space.link{href: "./"}
+      Dot●phrases
+  #collapsingNavbar.collapse.navbar-collapse.border-0
+    %ul.nav.navbar-nav
+      %li.nav-item
+        %a.nav-link.page-scroll.link{"datatarget" => "#one", href: "./#one"} Link
+      %li.nav-item
+        %a.nav-link.page-scroll.link{"datatarget" => "#blog", href: "./blank.html"} Link
