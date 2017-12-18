@@ -1,0 +1,19 @@
+%section.bg-alt
+  .container
+    %h2.text-center.pb-2
+    .row.wow.fadeInUp
+      .col-md-8.col-md-ml-auto.col-12
+        .card
+          .card-img-top
+          .card-body
+            .text-secondary.small
+              %p= e_title
+            %h1.display-1= e_mutter
+            %h2= e_detail
+            %p.lead.mt-3
+              Try
+              = link_to 'going back', 'javascript:history.back()'
+              or
+              = succeed "." do
+                = link_to 'return to the homepage', root_path
+    %hr/
