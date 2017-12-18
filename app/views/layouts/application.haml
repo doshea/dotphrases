@@ -7,10 +7,7 @@
     = csrf_meta_tags
     %meta{content: "A modular template", name: "description"}/
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
-    -# %link{href: "css/bootstrap-custom.css", rel: "stylesheet"}/
-    -# %link{href: "css/animate.min.css", rel: "stylesheet"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    %link{href: "css/ionicons.css?v=2.0.1", media: "none", onload: "this.media='all'", rel: "stylesheet"}/
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body.preload
@@ -27,9 +24,3 @@
     = render 'layouts/footer'
     / scripts loaded here
     = javascript_include_tag 'application_late', 'data-turbolinks-track': 'reload'
-    -# %script{src: "js/jquery.min.js"}
-    -# %script{src: "js/popper.min.js"}
-    -# %script{src: "js/bootstrap.min.js"}
-    -# %script{src: "js/jquery.easing.min.js"}
-    -# %script{src: "js/wow.min.js"}
-    -# %script{src: "js/scripts.js"}
