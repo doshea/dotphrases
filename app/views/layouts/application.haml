@@ -1,0 +1,109 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{charset: "utf-8"}/
+    %title DotPhrases
+    = csrf_meta_tags
+    %meta{content: "A modular template", name: "description"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    -# %link{href: "css/bootstrap-custom.css", rel: "stylesheet"}/
+    -# %link{href: "css/animate.min.css", rel: "stylesheet"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{href: "css/ionicons.css?v=2.0.1", media: "none", onload: "this.media='all'", rel: "stylesheet"}/
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body.preload
+    / navbar
+    %nav#topNav.navbar.navbar-default.mb-3.navbar-expand-md.fixed-top{"data-toggle" => "affix"}
+      %button.navbar-toggler.collapsed.navbar-toggler-right.border-0{"data-target" => "#collapsingNavbar", "data-toggle" => "collapse", type: "button"}
+        %span
+        %span
+        %span
+      .d-flex
+        / this toggler only displays on offcanvas layout
+        %a.navbar-toggler-anim.toggler-offcanvas.my-auto.collapsed.border-0.mr-2{"data-target" => "#offcanvasNavbar", "data-toggle" => "collapse", href: "#"}
+          %span
+          %span
+          %span
+        / text brand or logo image goes here
+        %a.navbar-brand.page-scroll.text-uppercase.wide-space.link{href: "./"}
+          Brand
+      #collapsingNavbar.collapse.navbar-collapse.border-0
+        %ul.nav.navbar-nav
+          %li.nav-item
+            %a.nav-link.page-scroll.link{"datatarget" => "#one", href: "./#one"} Link
+          %li.nav-item
+            %a.nav-link.page-scroll.link{"datatarget" => "#blog", href: "./blank.html"} Link
+    / /navbar
+    %section
+      .container
+        .row
+          .col-12
+            = yield
+            %h2 Just Add Content
+            %p.lead.py-2
+              Hypothetically some content could go here.
+    %footer#footer.pt-5
+      .container
+        .row
+          .col-lg-6
+            %p.display-2.mb-2 Footer.
+        .row
+          .col-6.col-md-3
+            %h6.text-uppercase More
+            %ul.list-unstyled
+              %li
+                %a{href: "./"} Link
+              %li
+                %a{href: "./"} Link
+              %li
+                %a{href: "./"} Link
+          .col-6.col-md-3.column
+            %h6.text-uppercase More
+            %ul.list-unstyled
+              %li
+                %a{href: "./"} Link
+              %li
+                %a{href: "./"} Link
+              %li
+                %a{href: "./"} Link
+          .col-12.col-md-3.column
+          .col-12.col-lg-2.col-md-3.text-right
+            %h6.text-uppercase More
+            %p
+              %em
+                %a{href: ""} Link to another page.
+          .col-12.text-md-right.text-center
+            %br/
+            %ul.list-inline
+              %li.list-inline-item
+                %a{href: "", rel: "nofollow", title: "Twitter"}>
+                  %i.ion-social-twitter-outline
+                 
+              %li.list-inline-item
+                %a{href: "", rel: "nofollow", title: "Instagram"}>
+                  %i.ion-social-instagram-outline
+                 
+              %li.list-inline-item
+                %a{href: "", rel: "nofollow", title: "Facebook"}>
+                  %i.ion-social-facebook-outline
+                 
+              %li.list-inline-item
+                %a{href: "", rel: "nofollow", title: "Dribbble"}
+                  %i.ion-social-dribbble-outline
+        %br/
+        %br/
+        %hr.light/
+        .text-center.text-normal
+          %a{:href => ""}
+            Company, Inc.
+            %i.ion-location
+    / scripts loaded here
+    = javascript_include_tag 'application_late', 'data-turbolinks-track': 'reload'
+    -# %script{src: "js/jquery.min.js"}
+    -# %script{src: "js/popper.min.js"}
+    -# %script{src: "js/bootstrap.min.js"}
+    -# %script{src: "js/jquery.easing.min.js"}
+    -# %script{src: "js/wow.min.js"}
+    -# %script{src: "js/scripts.js"}
