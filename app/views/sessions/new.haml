@@ -1,0 +1,55 @@
+%section.bg-alt
+  .container
+    %h2.text-center.pb-2
+    .row.wow.slideInUp
+      .col-lg-6.col-12.pb-3
+        .card.h-100
+          .card-img-top
+          .card-body
+            %h1 Login
+            = form_tag '/login', role: :form, id: 'login' do
+              .form-group
+                %label.sr-only.form-control-label{for: "inputEmailForm"} Email
+                .mx-auto.col-sm-10
+                  %input#inputEmailForm.form-control{placeholder: "email", required: "", type: "text"}/
+              .form-group
+                %label.sr-only.form-control-label{for: "inputPasswordForm"} Password
+                .mx-auto.col-sm-10
+                  %input#inputPasswordForm.form-control{placeholder: "password", required: "", type: "text"}/
+              .form-group
+                .mx-auto.col-sm-10
+                  .checkbox.form-control.form-control-sm.text-center.small
+                    %label
+                      = check_box_tag :remember_me, 1, params[:remember_me], checked: false    
+                      remember me
+              .form-group
+                .mx-auto.col-sm-10.pb-3.pt-2
+                  = button_tag 'Sign-In', class: 'btn btn-outline-secondary btn-lg btn-block'
+            = render partial: 'social_media_links'
+      .col-lg-6.col-12.pb-3
+        .card.h-100
+          .card-img-top
+          .card-body
+            %h1 Sign-up
+            = render partial: 'social_media_links'
+            = form_for @user do |f|
+              .form-group
+                = f.label :username, 'username', class: "sr-only form-control-label"
+                .mx-auto.col-sm-10
+                  = f.text_field :username, class: 'form-control', placeholder: "username", required: ""
+              .form-group
+                = f.label :email, 'email', class: "sr-only form-control-label"
+                .mx-auto.col-sm-10
+                  = f.email_field :email, class: 'form-control', placeholder: "email", required: ""
+              .form-group
+                = f.label :password, 'password', class: "sr-only form-control-label"
+                .mx-auto.col-sm-10
+                  = f.password_field :password, class: 'form-control', placeholder: "password", required: ""
+              .form-group
+                = f.label :password_confirmation, 'verify', class: "sr-only form-control-label"
+                .mx-auto.col-sm-10
+                  = f.password_field :password_confirmation, class: 'form-control', placeholder: "verify password", required: ""
+              .form-group
+                .mx-auto.col-sm-10.pb-3.pt-2
+                  = button_tag 'Register', class: 'btn btn-outline-secondary btn-lg btn-block'
+    %hr/

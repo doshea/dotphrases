@@ -28,5 +28,6 @@ module Dotphrases
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.exceptions_app = self.routes
+    config.autoload_paths += %W["#{config.root}/app/validators/"]
   end
 end

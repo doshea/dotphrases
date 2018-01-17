@@ -1,11 +1,11 @@
-%nav#topNav.navbar.navbar-default.mb-3.navbar-expand-md.fixed-top{"data-toggle" => "affix"}
-  %button.navbar-toggler.collapsed.navbar-toggler-right.border-0{"data-target" => "#collapsingNavbar", "data-toggle" => "collapse", type: "button"}
+%nav#topNav.navbar.navbar-default.mb-3.navbar-expand-md.fixed-top{"data-toggle": "affix"}
+  %button.navbar-toggler.collapsed.navbar-toggler-right.border-0{"data-target": "#collapsingNavbar", "data-toggle": "collapse", type: "button"}
     %span
     %span
     %span
   .d-flex
     / this toggler only displays on offcanvas layout
-    %a.navbar-toggler-anim.toggler-offcanvas.my-auto.collapsed.border-0.mr-2{"data-target" => "#offcanvasNavbar", "data-toggle" => "collapse", href: "#"}
+    %a.navbar-toggler-anim.toggler-offcanvas.my-auto.collapsed.border-0.mr-2{"data-target": "#offcanvasNavbar", "data-toggle": "collapse", href: "#"}
       %span
       %span
       %span
@@ -15,6 +15,89 @@
   #collapsingNavbar.collapse.navbar-collapse.border-0
     %ul.nav.navbar-nav
       %li.nav-item
-        %a.nav-link.page-scroll.link{"datatarget" => "#one", href: "./#one"} Link
+        %a.nav-link.page-scroll.link{"datatarget": "#one", href: "./#one"} Link
       %li.nav-item
-        %a.nav-link.page-scroll.link{"datatarget" => "#blog", href: "./blank.html"} Link
+        %a.nav-link.page-scroll.link{"datatarget": "#blog", href: "./blank.html"} Link
+    %ul.nav.navbar-nav.ml-auto
+      - if is_logged_in?
+        %li.nav-item.dropdown.dropdown-hover.megamenu.minimenu
+          %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            = @current_user.username
+            %span.caret
+          .dropdown-menu.dropdown-menu-right.pt-1.pb-2
+            .row.mx-1
+              .col-12
+                %span.close.hidden-sm-up{"data-toggle" => "dropdown"} ×
+              -# %ul.col-md-6.col-6.list-unstyled.small{:role => "menu"}
+              -#   %li.text-uppercase.text-wide.pt-2.pb-1
+              -#     %a.link.text-muted{:href => "elements.html"} Elements
+              -#   %li
+              -#     %a.link{:href => "./elements.html#accordions"} Accordion & Collapsible
+              -#   %li
+              -#     %a.link{:href => "./elements.html#alerts"} Alerts / Notifications
+              -#   %li
+              -#     %a.link{:href => "./elements.html#badges"} Badges & Tags
+              -#   %li
+              -#     %a.link{:href => "./elements.html#buttons"} Buttons & Colors
+              -#   %li
+              -#     %a.link{:href => "./elements.html#carousels"} Carousel / Sliders
+              -#   %li
+              -#     %a.link{:href => "./elements.html#comments"} Comments
+              -#   %li
+              -#     %a.link{:href => "./layout-grid.html"} Gallery
+              -#   %li
+              -#     %a.link{:href => "./elements.html#jumbotron"} Jumbotron
+              -#   %li
+              -#     %a.link{:href => "./elements.html#lists"} Lists
+              -#   %li
+              -#     %a.link{:href => "./layout-masonry.html"} Masonry
+              -#   %li
+              -#     %a.link{:href => "./elements.html#modals"} Modal & Overlay
+              -#   %li
+              -#     %a.link{:href => "./elements.html#progress"} Progress
+              -#   %li
+              -#     %a.link{:href => "./elements.html#tables"} Tables
+              -#   %li
+              -#     %a.link{:href => "./elements.html#tabs"} Tabs
+              -#   %li
+              -#     %a.link{:href => "./elements.html#imageGrids"} Thumbnails & Images
+              %ul.col-md-12.col-12.list-unstyled.small.text-right{role: "menu"}
+                %li.text-uppercase.text-wide.pt-2.pb-1
+                  %a.link.text-muted{:href => "cards.html"} Cards
+                %li
+                  %a.link{:href => "cards.html#card_feature"} Image card
+                %li
+                  %a.link{:href => "cards.html#card_list"} List card
+                %li
+                  %a.link{:href => "cards.html#card_contacts"} Contacts card
+                %li
+                  %a.link{:href => "cards.html#card_thumbnails"} Thumbnails card
+                %li
+                  %a.link{:href => "cards.html#card_product"} Product card
+                %li
+                  %a.link{:href => "cards.html#card_profile"} Profile card
+                %li
+                  %a.link{:href => "cards.html#card_stats"} Stats card
+                %li.text-uppercase.text-wide.pt-3.pb-1
+                  %a.link.text-muted{:href => "elements.html#forms"} Forms
+                %li
+                  %a.link{:href => "./elements.html#formLogin"} Login form
+                %li
+                  %a.link{:href => "./elements.html#formRegister"} Sign-up form
+                %li
+                  %a.link{:href => "./elements.html#formChangePassword"} Password change form
+                %li
+                  %a.link{:href => "./elements.html#formResetPassword"} Password reset form
+                %li
+                  %a.link{:href => "./elements.html#formUserEdit"} User info form
+                %li
+                  %a.link{:href => "./elements.html#formContact"} Contact form
+                %li
+                  %a.link{:href => "./elements.html#formPayment"} Payment form
+      - else
+        %li.nav-item
+          %a.nav-link.link.pr-0{href: "#/messages"}
+            Messages
+            %sup.badge.badge-info.badge-pill.small{title: "notify count"} 2
+        %li.nav-item
+          %a.nav-link.link.pr-0{href: "#/users"} Profiles

@@ -1,0 +1,89 @@
+-#       %hr/
+-#       %form
+-#         %fieldset
+-#           %label.mb-0{for: "name2"} Name
+-#           .row.mb-1
+-#             .col-lg-7.ml-md-0
+-#               = text_field_tag :name2, nil, class: 'form-control', required: ''
+-#           %label.mb-0{for: "email2"} Email
+-#           .row.mb-1
+-#             .col-lg-7.ml-md-0
+-#               = text_field_tag :email2, nil, class: 'form-control', required: ''
+-#           %label.mb-0{for: "message2"} Message
+-#           .row.mb-1
+-#             .col-lg-11.ml-md-0
+-#               = text_area_tag :message2, nil, class: 'form-control', required: '', rows: 6
+-#           %button.btn.btn-default.btn-lg{'data-target': 'formAlert', 'data-toggle': "collapse", :type => "submit"} Send Message
+-#         #formAlert.alert.alert-info.fade.collapse.mt-4{role: "alert"}
+-#           = button_tag class: 'close', "aria-label": 'Close', "data-dismiss": 'alert', type: 'button' do
+-#             %span{"aria-hidden": "true"} ×
+-#           Thank you. Your message was successfully sent.
+
+%section.container
+  .row.mb-3
+    .col-md-12
+      %h1 Contact Us
+    .col-md-8
+      %p
+        3 wolf moon retro jean shorts chambray sustainable roof party. Shoreditch vegan artisan Helvetica. Tattooed Codeply Echo Park Godard kogi, next level irony ennui twee squid fap selvage. Meggings flannel Brooklyn literally small batch, mumblecore
+        PBR try-hard kale chips. Brooklyn vinyl lumbersexual bicycle rights, viral fap cronut leggings squid chillwave pickled gentrify mustache. 3 wolf moon hashtag church-key Odd Future. Austin messenger bag normcore, Helvetica Williamsburg
+        sartorial tote bag distillery Portland before they sold out gastropub taxidermy Vice.
+      %p
+        Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher street art Carles. Helvetica cray plaid, vegan brunch Banksy leggings +1 direct trade. Wayfarers codeply PBR selfies. Banh mi McSweeney's Shoreditch selfies, forage fingerstache food
+        truck occupy YOLO Pitchfork fixie iPhone fanny pack art party Portland.
+      %hr/
+      %form
+        %fieldset
+          %label.mb-0{for: "name2"} Name
+          .row.mb-1
+            .col-lg-7.ml-md-0
+              = text_field_tag :name2, nil, class: 'form-control', required: ''
+          %label.mb-0{for: "email2"} Email
+          .row.mb-1
+            .col-lg-7.ml-md-0
+              = text_field_tag :email2, nil, class: 'form-control', required: ''
+          %label.mb-0{for: "message2"} Message
+          .row.mb-1
+            .col-lg-11.ml-md-0
+              = text_area_tag :message2, nil, class: 'form-control', required: '', rows: 6
+          = button_tag 'Send Message', type: 'submit', class: 'btn btn-default btn-lg', data: {target: '#formAlert', toggle: 'collapse'}
+        #formAlert.alert.alert-info.fade.collapse.mt-4{role: "alert"}
+          = button_tag class: 'close', "aria-label": 'Close', data: {dismiss: 'alert'}, type: 'button' do
+            %span{"aria-hidden": "true"} ×
+          Thank you. Your message was successfully sent.
+    .col-md-4
+      / Google Map
+      = link_to 'https://www.google.com/maps/place/UW+Medical+Center/@47.6503399,-122.3124237,16.07z/data=!4m12!1m6!3m5!1s0x549014929d8535eb:0x6b742c7901b82ba3!2sUniversity+of+Washington!8m2!3d47.6553351!4d-122.3035199!3m4!1s0x549014ec6ca5563f:0x671ea3754d454c33!8m2!3d47.649877!4d-122.3082174' do
+        = image_tag "//maps.googleapis.com/maps/api/staticmap?center=UW+Medical+Center&zoom=14&size=400x400&maptype=roadmap&key=AIzaSyBYTyi6ZrSWgXEXp2Y5fsbcO7a-DJdstsk", alt: 'Google Map of University of Washington (Seattle, WA)'
+      / End Google Map
+      %h2.mt-3 Information
+      %ul.list-unstyled
+        %li
+          %a{:href => "#"}
+            800 E. Main Street
+            %br>/
+            Albany, NY 10021
+        %li
+          %a{:href => "#"}
+            %i.text-muted.fa.ion-ios-telephone-outline.fa-phone.fa-fw
+            212 555-1212
+        %li
+          %a{:href => "#"}
+            %i.text-muted.fa.ion-ios-email-outline.fa-envelope.fa-fw
+            info@domain.com
+        %li
+          %a{:href => "#"}
+            %i.text-muted.fa.ion-ios-world-outline.fa-fw
+            http://www.codeply.com
+      %h2.mt-3 Hours
+      %ul.list-unstyled.mb-3
+        %li
+          %span.font-weight-bold Monday-Friday:
+          10am - 8pm
+        %li
+          %span.font-weight-bold Saturday:
+          11am - 3pm
+        %li
+          %span.font-weight-bold Sunday:
+          Closed
+  / /row

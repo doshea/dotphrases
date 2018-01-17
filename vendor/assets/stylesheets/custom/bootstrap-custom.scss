@@ -846,6 +846,9 @@ textarea {
     .megamenu ul {
         padding-bottom: 15px;
     }
+    .megamenu .hidden-sm-up {
+      display: hidden;
+    }
     .megamenu > .dropdown-menu {
         min-width: 470px;
         top: 30px;
@@ -868,6 +871,9 @@ textarea {
         transform: translateY(0);
         transition: all .25s ease-in;
         bottom: 100%;
+    }
+    .minimenu > .dropdown-menu {
+      min-width: 200px;
     }
 }
 .dropdown-md > .dropdown-menu {

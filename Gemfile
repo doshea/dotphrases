@@ -23,12 +23,17 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+gem 'annotate'
+
 # AWS image upload gems
 gem 'carrierwave'
 gem 'fog'
 gem 'rmagick'
 gem 'remotipart'
 gem 'unf'
+
+#Pagination
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

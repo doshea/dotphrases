@@ -1,0 +1,74 @@
+%section
+  .container
+    .row
+      .col-md-12
+        %h2.text-center Institutions
+        %hr.accent.my-4/
+        .table-responsive
+          %table.table.table-striped.table-hover.table-bordered
+            %thead
+              %tr
+                %th.id
+                  %a
+                    Id
+                    %i.fa.fa-sort
+                %th.name
+                  %a
+                    Name
+                    %i.fa.fa-sort
+                %th.abbreviation Abbreviation
+                %th.field3
+                  %a
+                    Verified
+                    %i.fa.fa-sort
+                %th.field4
+                  %a
+                    Created
+                    %i.fa.fa-sort
+                %th.field5
+                  %a
+                    Last Updated
+                    %i.fa.fa-sort
+                %th.text-center
+                  %i.ion-ios-trash-outline
+            %tbody
+              - @institutions.each do |i|
+                %tr
+                  %td
+                    =link_to i.try(:id), i
+                  %td= i.try(:name)
+                  %td= i.try(:abbreviation)
+                  %td= i.try(:verified)
+                  %td= i.try(:created_at)
+                  %td= i.try(:updated_at)
+                  %td.text-center
+                    =link_to 'x', i, method: :delete
+
+            %tfoot
+              -# %tr
+              -#   %td{colspan: "7"}
+              -#     .text-center
+              -#       %nav{"aria-label": "Page navigation"}
+              -#         %ul.pagination.justify-content-center
+              -#           %li.page-item
+              -#             %a.page-link{"aria-label" => "Previous", :href => ""}
+              -#               %i.fa.fa-chevron-left.ion-ios-arrow-left
+              -#               %span.sr-only Previous
+              -#           %li.page-item
+              -#             %a.page-link{href: ""} 1
+              -#           %li.page-item
+              -#             %a.page-link{href: ""} 2
+              -#           %li.page-item
+              -#             %a.page-link{href: ""} 3
+              -#           %li.page-item
+              -#             %a.page-link{href: ""} 4
+              -#           %li.page-item
+              -#             %a.page-link{href: ""} 5
+              -#           %li.page-item
+              -#             %a.page-link{"aria-label": "Next", href: ""}
+              -#               %i.fa.fa-chevron-right.ion-ios-arrow-right
+              -#               %span.sr-only Next
+              = paginate @institutions
+        
+- Institution.all.each do |i|
+  hello

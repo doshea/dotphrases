@@ -10,17 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171217203323) do
+ActiveRecord::Schema.define(version: 20180115223055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "domains", force: :cascade do |t|
+    t.string "suffix", null: false
+    t.boolean "verified", default: false
+    t.bigint "institution_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["institution_id"], name: "index_domains_on_institution_id"
+  end
 
   create_table "institutions", force: :cascade do |t|
     t.string "name"
     t.string "abbreviation"
     t.text "image"
-    t.string "email_suffix"
-    t.boolean "verified"
+    t.boolean "verified", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,8 +36,8 @@ ActiveRecord::Schema.define(version: 20171217203323) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "username"
-    t.string "email"
+    t.string "username", null: false
+    t.string "email", null: false
     t.text "image"
     t.boolean "is_admin"
     t.string "password_digest"

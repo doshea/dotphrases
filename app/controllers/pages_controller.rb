@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   #GET /faq or faq_path
   def faq
   end
+
+  #GET /contact or contact_path
+  def contact
+  end
 end

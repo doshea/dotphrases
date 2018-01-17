@@ -5,9 +5,8 @@ class CreateInstitutions < ActiveRecord::Migration[5.1]
       t.string :abbreviation
 
       t.text :image
-      t.string :email_suffix
 
-      t.boolean :verified
+      t.boolean :verified, default: false
 
       t.timestamps
     end
