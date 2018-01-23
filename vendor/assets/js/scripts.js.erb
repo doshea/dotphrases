@@ -1,5 +1,5 @@
 // simple file include mechanism using jquery load
-$.getScript("./js/loader.js");
+$.getScript('<%= asset_path('loader.js')%>');
 
 // affix replacement
 var toggleAffix = function(affixElement, scrollElement, wrapper) {

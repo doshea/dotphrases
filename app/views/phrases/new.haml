@@ -1,0 +1,9 @@
+%section
+  .container
+    .row
+      .col-md-12
+        %div#editor-container
+        %script
+          -# var quill = new Quill('#editor', {modules: { toolbar: true }, theme: 'snow'});
+          // We can now initialize Quill with something like this:
+          var quill = new Quill('#editor-container', {modules: { toolbar: true }, theme: 'snow'});

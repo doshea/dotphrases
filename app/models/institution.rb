@@ -15,6 +15,7 @@ class Institution < ApplicationRecord
   has_many :domains
 
   validates :name, presence: true, uniqueness: true
+  paginates_per 10
 
   def propose_domain(suffix)
     domains << Domain.create(suffix: suffix, institution_id: id)

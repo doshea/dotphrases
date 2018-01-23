@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :phrases
+
   resources :institutions, only: [:index, :show, :destroy]
 
   match '/404', to: 'errors#not_found', via: :all
