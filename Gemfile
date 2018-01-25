@@ -37,9 +37,6 @@ gem 'unf'
 #Pagination
 gem 'kaminari'
 
-#Rich Text Editor
-gem 'quilljs-rails'
-
 gem 'simple_form'
 
 group :development, :test do

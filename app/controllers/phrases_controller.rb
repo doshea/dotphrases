@@ -9,9 +9,9 @@ class PhrasesController < ApplicationController
   
   def create
     if is_logged_in?
-      phrase = Phrase.new(:create_phrase_params)
-      @current_user.phrases << phrase
-      redirect_to phrase
+      @phrase = Phrase.new(create_phrase_params)
+      @current_user.phrases << @phrase
+      redirect_to @phrase
     else
       alert_js :error
     end
