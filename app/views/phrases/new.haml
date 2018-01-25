@@ -2,8 +2,8 @@
   .container
     .row
       .col-md-12
-        %div#editor-container
-        %script
-          -# var quill = new Quill('#editor', {modules: { toolbar: true }, theme: 'snow'});
-          // We can now initialize Quill with something like this:
-          var quill = new Quill('#editor-container', {modules: { toolbar: true }, theme: 'snow'});
+        = simple_form_for @phrase do |f|
+          = f.input :label, placeholder: 'My New Phrase', label: 'Label:'
+          = f.input :abbrev, label: 'Abbreviation:', placeholder: '.newphrase'
+          = f.input :text, wrapper_html: { class: 'quill_container' }, label: false
+          = f.button :submit

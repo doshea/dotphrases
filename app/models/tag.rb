@@ -1,16 +1,12 @@
 # == Schema Information
 #
-# Table name: phrases
+# Table name: tags
 #
 #  id         :integer          not null, primary key
-#  abbrev     :string
-#  title      :string
-#  text       :text
-#  user_id    :integer
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Phrase < ApplicationRecord
-  belongs_to :user
+class Tag < ApplicationRecord
 end

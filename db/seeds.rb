@@ -6,8 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Domain.delete_all
+Phrase.delete_all
+Tag.delete_all
 User.delete_all
 Institution.delete_all
+
 
 uw = Institution.create(name: 'University of Washington', abbreviation: 'UW')
 

@@ -22,3 +22,4 @@
 //= require scripts
 //= require quill.min
 //= require quill.global
+//= require shoot_quill

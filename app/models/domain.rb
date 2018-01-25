@@ -1,10 +1,10 @@
 # == Schema Information
 #
-# Table name: email_suffixes
+# Table name: domains
 #
 #  id             :integer          not null, primary key
-#  suffix         :string
-#  verified       :boolean
+#  suffix         :string           not null
+#  verified       :boolean          default(FALSE)
 #  institution_id :integer          not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null

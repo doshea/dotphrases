@@ -1,18 +1,15 @@
 !!!
-%html{lang: "en"}
+%html{lang: 'en'}
   %head
-    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{charset: "utf-8"}/
+    %meta{content: 'text/html; charset=UTF-8', "http-equiv": 'Content-Type'}/
+    %meta{charset: 'utf-8'}/
     %title
       = yield(:title) + title_backup
     = csrf_meta_tags
-    %meta{content: "A modular template", name: "description"}/
-    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: 'A modular template', name: 'description'}/
+    %meta{content: 'width=device-width, initial-scale=1.0', name: 'viewport'}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    -# = javascript_include_tag 'https://cdn.quilljs.com/1.1.9/quill.js'
-    -# = stylesheet_link_tag 'https://cdn.quilljs.com/1.1.9/quill.snow.css'
-
   %body.preload
     = render 'layouts/nav'
     = yield
@@ -25,4 +22,3 @@
     -#         %p.lead.py-2
     -#           Hypothetically some content could go here.
     = render 'layouts/footer'
-    / scripts loaded here

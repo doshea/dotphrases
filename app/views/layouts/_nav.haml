@@ -94,6 +94,8 @@
                   %a.link{:href => "./elements.html#formContact"} Contact form
                 %li
                   %a.link{:href => "./elements.html#formPayment"} Payment form
+                %li
+                  = link_to 'Logout', logout_path, method: :delete
       - else
         %li.nav-item
           %a.nav-link.link.pr-0{href: "#/messages"}
